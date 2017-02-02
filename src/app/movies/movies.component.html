@@ -2,13 +2,15 @@
   <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
 </p>
 <div class="jumbotron">
-  <p>Search for a movie using the form below</p>
+  <p>DO BETTER NOT SEARCH!!!</p>
   <form>
     <div class="form-group">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for movies..." [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchMovies()">
+        <!-- HINT: the evilBugSearch seems to be here twice... -->
+        <input type="text" class="form-control" placeholder="you will regret it..." [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="evilBugSearch()">
         <span class="input-group-btn">
-          <button class="btn btn-primary" type="button" (click)="searchMovies()">Go!</button>
+          <!-- HINT: let's go to the place where evilBug is implemented, maybe we'll find a better method for searching -->
+          <button class="btn btn-primary" type="button" (click)="evilBugSearch()">DO NOT SEARCH!</button>
         </span>
       </div>
       <!-- /input-group -->
@@ -16,7 +18,7 @@
   </form>
 </div>
 <div *ngIf="searchRes">
-  <h3 class="orange-text">Search Results</h3>
+  <h3 class="orange-text">Why is there always the same creepy movie, when you search?</h3>
   <div class="row is-flex">
     <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of searchRes; let i = index;">
       <movie-card [movie]="movie"></movie-card>

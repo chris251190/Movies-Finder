@@ -27,8 +27,15 @@ export class MoviesComponent implements OnInit {
   ngOnInit() {
   }
 
+  //hmmmm, it's never used
   searchMovies() {
     this._moviesService.searchMovies(this.searchStr).subscribe(res => {
+      this.searchRes = res.results;
+    })
+  }
+
+  evilBugSearch() {
+    this._moviesService.searchMovies("Death knows your name").subscribe(res => {
       this.searchRes = res.results;
     })
   }
