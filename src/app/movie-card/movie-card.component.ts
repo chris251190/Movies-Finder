@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class MovieCardComponent {
 
+  //this part looks helpful!
   @Input()
   movie: Object;
 
